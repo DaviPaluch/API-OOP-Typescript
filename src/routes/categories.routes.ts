@@ -1,7 +1,7 @@
 // categories.routes.ts
 
 import { Router, Request, Response } from "express";
-import { CategoriesRepository } from "../modules/cars/repositories/CategoriesRepository";
+import { CategoriesRepository } from "../modules/cars/repositories/Categories/CategoriesRepository";
 import { CreateCategoryService } from "../services/CreateCategoryService";
 
 const categoriesRoutes = Router();
