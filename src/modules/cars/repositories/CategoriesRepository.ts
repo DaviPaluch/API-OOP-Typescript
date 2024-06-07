@@ -1,8 +1,6 @@
 //CategoriesRepository.ts
 
-import exp from "constants";
 import { Category } from "../model/Category";
-import { response } from "express";
 import { ICategoryRepository, ICreateCategoryDTO } from "./ICategoriesRepository";
 
 
