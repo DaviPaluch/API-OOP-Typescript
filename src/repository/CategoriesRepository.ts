@@ -1,3 +1,5 @@
+//CategoriesRepository.ts
+
 import exp from "constants";
 import { Category } from "../model/Category";
 import { response } from "express";
@@ -15,27 +17,25 @@ class CategoriesRepositoty {
     this.categories = [];
   }
 
-  create({ description, name }: ICreateCategoryDTO): void { // indicamos que receberemos um objeto do tipo ICreateCategoryDTO e fazemos a desestruturação dele. Depois indicamos que o retorno é VOID.
+  create({ description, name }: ICreateCategoryDTO): void {
     const category = new Category()
-
-    Object.assign(this.categories, {
+  
+    Object.assign(category, {
       name,
       description,
       created_at: new Date()
     })
-
+  
     this.categories.push(category)
   }
+  
 
   list(): Category[] {
     return this.categories;
   }
 
   findByName(name: string): Category {
-    console.log("input: ", name)
-    console.log("this.categories: ", this.categories)
-    const category: Category = this.categories.find((category) => category.name === name)
-    console.log("category: ", category)
+    const category: Category =  this.categories.find((category) => category.name === name)
     return category
   }
 }

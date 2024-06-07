@@ -1,27 +1,22 @@
+// categories.routes.ts
+
 import { Router, Request, Response } from "express";
-import { Category } from "../model/Category";
 import { CategoriesRepositoty } from "../repository/CategoriesRepository";
+import { CreateCategoryService } from "../services/CreateCategotyService";
 
 const categoriesRoutes = Router();
 const categoriesRepository = new CategoriesRepositoty()
 
-const categories: Category[] = [];
 
 
+categoriesRoutes.post("/", (request: Request, response: Response) => {
+  const { name, description } = request.body;
 
-categoriesRoutes.post("/", async (request: Request, response: Response) => {
-  const { name, description } = request.body
-  console.log(name, description)
+  const createCategoryService = new CreateCategoryService(categoriesRepository)
 
-  const categoryAlreadyExists = await categoriesRepository.findByName(name)
+  createCategoryService.execute({name,description})
 
-  console.log("categoryAlreadyExists: ", categoryAlreadyExists)
-  if (categoryAlreadyExists) {
-    return response.status(400).json({ error: "categoria já existe..." })
-  }
-
-  categoriesRepository.create({ description, name })
-  return response.status(201).send("OK");
+  return response.status(201).send("sucesso");
 })
 
 categoriesRoutes.get("/", (request: Request, response: Response) => {
