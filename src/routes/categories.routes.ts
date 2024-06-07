@@ -1,11 +1,11 @@
 // categories.routes.ts
 
 import { Router, Request, Response } from "express";
-import { CategoriesRepositoty } from "../repository/CategoriesRepository";
+import { CategoriesRepository } from "../repositories/CategoriesRepository";
 import { CreateCategoryService } from "../services/CreateCategotyService";
 
 const categoriesRoutes = Router();
-const categoriesRepository = new CategoriesRepositoty()
+const categoriesRepository = new CategoriesRepository()
 
 
 
@@ -14,7 +14,7 @@ categoriesRoutes.post("/", (request: Request, response: Response) => {
 
   const createCategoryService = new CreateCategoryService(categoriesRepository)
 
-  createCategoryService.execute({name,description})
+  createCategoryService.execute({ name, description })
 
   return response.status(201).send("sucesso");
 })
