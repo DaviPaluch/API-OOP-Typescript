@@ -1,11 +1,11 @@
-import { SpecificationsRepository } from "../modules/cars/repositories/Specifications/SpecificationsRepository"
+import { SpecificationsRepository } from "../../../repositories/implementations/Specifications/SpecificationsRepository"
 
 interface IRequest {
   name: string,
   description: string
 }
 
-class CreateSpecificationsService {
+class CreateSpecificationsUseCase {
 
   constructor(private specificationsRepository: SpecificationsRepository) { }
 
@@ -14,11 +14,11 @@ class CreateSpecificationsService {
     const specificationsAlreadyExists = this.specificationsRepository.findByName(name)
 
     if (specificationsAlreadyExists) {
-      throw new Error("specificação já existe...")
+      throw new Error("especificação já existe...")
     }
 
     this.specificationsRepository.create({ name, description })
   }
 }
 
-export { CreateSpecificationsService }
+export { CreateSpecificationsUseCase }
