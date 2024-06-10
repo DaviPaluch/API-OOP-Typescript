@@ -1,7 +1,7 @@
 //CategoriesRepository.ts
 
-import { Category } from "../../model/Category";
-import { ICategoryRepository, ICreateCategoryDTO } from "./ICategoriesRepository";
+import { Category } from "../../../model/Category";
+import { ICategoryRepository, ICreateCategoryDTO } from "../../ICategoriesRepository";
 
 
 

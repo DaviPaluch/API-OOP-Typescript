@@ -1,5 +1,5 @@
 import { Category } from "../../model/Category";
-import { ICreateSpecificationsDTO, ISpecificationsRepository } from "./ISpecificationsRepository";
+import { ICreateSpecificationsDTO, ISpecificationsRepository } from "../../ISpecificationsRepository";
 
 class PostgresSpecificationsRepository implements ISpecificationsRepository {
   findByName(name: string): Category {

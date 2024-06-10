@@ -1,7 +1,7 @@
 //CategoriesRepository.ts
 
-import { Specification } from "../../model/Specification";
-import { ICreateSpecificationsDTO, ISpecificationsRepository } from "./ISpecificationsRepository";
+import { Specification } from "../../../model/Specification";
+import { ICreateSpecificationsDTO, ISpecificationsRepository } from "../../ISpecificationsRepository";
 
 
 

@@ -1,7 +1,7 @@
 // categories.routes.ts
 
 import { Router, Request, Response } from "express";
-import { SpecificationsRepository } from "../modules/cars/repositories/Specifications/SpecificationsRepository";
+import { SpecificationsRepository } from "../modules/cars/repositories/implementations/Specifications/SpecificationsRepository";
 import { CreateSpecificationsService } from "../services/CreateSpecificationsService";
 import { listCategoriesController } from "../modules/cars/useCases/categories/listCategories";
 

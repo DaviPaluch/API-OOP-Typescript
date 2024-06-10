@@ -1,7 +1,7 @@
 // categories.routes.ts
 
 import { Router, Request, Response } from "express";
-import { CategoriesRepository } from "../modules/cars/repositories/Categories/CategoriesRepository";
+import { CategoriesRepository } from "../modules/cars/repositories/implementations/Categories/CategoriesRepository";
 import { createCategoryController } from "../modules/cars/useCases/categories/createCategory/index";
 import { listCategoriesController } from "../modules/cars/useCases/categories/listCategories/index";
 

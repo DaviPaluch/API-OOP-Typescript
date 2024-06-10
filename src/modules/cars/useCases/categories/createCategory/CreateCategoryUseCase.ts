@@ -1,4 +1,4 @@
-import { CategoriesRepository } from "../../../repositories/Categories/CategoriesRepository"
+import { CategoriesRepository } from "../../../repositories/implementations/Categories/CategoriesRepository"
 
 
 
