@@ -1,5 +1,5 @@
 import { Category } from "../../../model/Category";
-import { CategoriesRepository } from "../../../repositories/Categories/CategoriesRepository";
+import { CategoriesRepository } from "../../../repositories/implementations/Categories/CategoriesRepository";
 
 import { Response } from "express";
 

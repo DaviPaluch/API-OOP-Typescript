@@ -1,4 +1,4 @@
-import { Category } from "../../model/Category";
+import { Category } from "../../../model/Category";
 import { ICreateSpecificationsDTO, ISpecificationsRepository } from "../../ISpecificationsRepository";
 
 class PostgresSpecificationsRepository implements ISpecificationsRepository {
