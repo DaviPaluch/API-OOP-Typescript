@@ -11,9 +11,9 @@ class UploadCategoryUseCase {
   constructor(private categoriesRepository: ICategoryRepository) { }
 
   loadCategories(file: Express.Multer.File): IUploadCategory[] {
+    const stream = fs.createReadStream(file.path)
     const categories: IUploadCategory[] = [];
 
-    const stream = fs.createReadStream(file.path)
 
     const parseFile = parse({ delimiter: ',' })
 

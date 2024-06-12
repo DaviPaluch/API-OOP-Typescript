@@ -12,6 +12,7 @@ const categoriesRoutes = Router();
 const upload = multer({ dest: "./tmp" })
 
 categoriesRoutes.post("/", (request: Request, response: Response) => {
+  console.log("panda")
   return createCategoryController.handle(request, response)
 })
 
