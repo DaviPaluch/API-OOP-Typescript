@@ -1,7 +1,7 @@
 // categories.routes.ts
 import { Router, Request, Response } from "express";
 import multer from "multer";
-import { createCategoryController } from "../modules/cars/useCases/categories/createCategory/index";
+import createCategoryController from "../modules/cars/useCases/categories/createCategory/index";
 import { listCategoriesController } from "../modules/cars/useCases/categories/listCategories/index";
 import { uloadCategoryController } from "../modules/cars/useCases/categories/uploadCategory/index";
 
@@ -13,7 +13,7 @@ const upload = multer({ dest: "./tmp" })
 
 categoriesRoutes.post("/", (request: Request, response: Response) => {
   console.log("panda")
-  return createCategoryController.handle(request, response)
+  return createCategoryController().handle(request, response)
 })
 
 categoriesRoutes.get("/", (request: Request, response: Response) => {
